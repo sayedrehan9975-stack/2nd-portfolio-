@@ -1,0 +1,590 @@
+<!DOCTYPE html><html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0"><title>Rehan | Future AI Engineer</title><style>
+*{
+  margin:0;
+  padding:0;
+  box-sizing:border-box;
+  scroll-behavior:smooth;
+}
+
+body{
+  font-family:Arial,sans-serif;
+  background:#050510;
+  color:white;
+  overflow-x:hidden;
+}
+
+body::before{
+  content:"";
+  position:fixed;
+  inset:0;
+  background:
+    radial-gradient(circle at 20% 20%,rgba(0,247,255,.10),transparent 30%),
+    radial-gradient(circle at 80% 70%,rgba(255,0,212,.10),transparent 30%);
+  pointer-events:none;
+  z-index:-1;
+}
+
+nav{
+  position:sticky;
+  top:0;
+  z-index:100;
+  width:100%;
+  padding:18px 6%;
+  background:rgba(5,5,16,.95);
+  border-bottom:1px solid #00f7ff;
+  display:flex;
+  justify-content:space-between;
+  align-items:center;
+}
+
+.logo{
+  color:#00f7ff;
+  font-size:22px;
+  font-weight:bold;
+  text-shadow:0 0 15px #00f7ff;
+}
+
+nav ul{
+  display:flex;
+  gap:14px;
+  list-style:none;
+  flex-wrap:wrap;
+  justify-content:flex-end;
+}
+
+nav a{
+  color:white;
+  text-decoration:none;
+  font-size:13px;
+}
+
+nav a:hover{
+  color:#00f7ff;
+}
+
+.hero{
+  min-height:100vh;
+  padding:100px 7% 70px;
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  text-align:center;
+}
+
+.hero-content{
+  max-width:850px;
+}
+
+.hero h3{
+  color:#ff00d4;
+  font-size:20px;
+  margin-bottom:15px;
+}
+
+.hero h1{
+  font-size:clamp(60px,18vw,100px);
+  margin-bottom:15px;
+  background:linear-gradient(90deg,#00f7ff,#ffffff,#ff00d4);
+  -webkit-background-clip:text;
+  color:transparent;
+}
+
+.typing{
+  min-height:35px;
+  color:#00f7ff;
+  font-size:22px;
+  margin:15px 0;
+  text-shadow:0 0 10px #00f7ff;
+}
+
+.hero p{
+  color:#b5b5c5;
+  line-height:1.8;
+  font-size:16px;
+  margin:20px auto 30px;
+}
+
+.hero-buttons{
+  display:flex;
+  gap:15px;
+  justify-content:center;
+  flex-wrap:wrap;
+}
+
+.btn{
+  display:inline-block;
+  padding:13px 24px;
+  border:1px solid #00f7ff;
+  border-radius:30px;
+  color:#00f7ff;
+  text-decoration:none;
+  transition:.3s;
+}
+
+.btn:hover{
+  background:#00f7ff;
+  color:black;
+  box-shadow:0 0 25px #00f7ff;
+}
+
+.btn-pink{
+  border-color:#ff00d4;
+  color:#ff00d4;
+}
+
+.btn-pink:hover{
+  background:#ff00d4;
+  color:white;
+  box-shadow:0 0 25px #ff00d4;
+}
+
+section{
+  padding:75px 7%;
+}
+
+.section-title{
+  text-align:center;
+  color:#00f7ff;
+  font-size:32px;
+  margin-bottom:40px;
+  text-shadow:0 0 12px #00f7ff;
+}
+
+.section-title span{
+  color:#ff00d4;
+}
+
+.about-box{
+  max-width:950px;
+  margin:auto;
+  padding:28px;
+  background:#0b1020;
+  border:1px solid #00f7ff;
+  border-radius:18px;
+  line-height:1.8;
+  color:#c5c5d0;
+}
+
+.about-highlights{
+  display:grid;
+  grid-template-columns:repeat(2,1fr);
+  gap:15px;
+  margin-top:25px;
+}
+
+.highlight{
+  padding:18px;
+  text-align:center;
+  background:#11172d;
+  border-radius:12px;
+  border:1px solid #333;
+}
+
+.highlight h3{
+  color:#00f7ff;
+  margin-bottom:8px;
+}
+
+.highlight p{
+  color:#aaa;
+  font-size:14px;
+}
+
+.skills-grid,
+.projects-grid,
+.social-grid{
+  display:grid;
+  grid-template-columns:repeat(auto-fit,minmax(220px,1fr));
+  gap:22px;
+}
+
+.skill-card,
+.project-card,
+.social-card{
+  background:#0b1020;
+  border:1px solid #00f7ff;
+  border-radius:18px;
+  padding:25px;
+  transition:.3s;
+}
+
+.skill-card:hover,
+.project-card:hover,
+.social-card:hover{
+  transform:translateY(-7px);
+  box-shadow:0 0 25px rgba(0,247,255,.4);
+}
+
+.skill-card{
+  text-align:center;
+}
+
+.skill-icon{
+  font-size:40px;
+  margin-bottom:12px;
+}
+
+.skill-card h3,
+.project-card h3{
+  color:#00f7ff;
+  margin-bottom:12px;
+}
+
+.skill-card p,
+.project-card p{
+  color:#aaa;
+  line-height:1.7;
+  font-size:14px;
+}
+
+.timeline{
+  max-width:900px;
+  margin:auto;
+}
+
+.timeline-item{
+  background:#0b1020;
+  padding:25px;
+  margin-bottom:20px;
+  border-left:4px solid #00f7ff;
+  border-radius:12px;
+}
+
+.timeline-item:nth-child(even){
+  border-left-color:#ff00d4;
+}
+
+.timeline-item h3{
+  color:#00f7ff;
+  margin-bottom:10px;
+}
+
+.timeline-item:nth-child(even) h3{
+  color:#ff00d4;
+}
+
+.timeline-item p{
+  color:#aaa;
+  line-height:1.7;
+}
+
+.tags{
+  display:flex;
+  gap:8px;
+  flex-wrap:wrap;
+  margin-top:15px;
+}
+
+.tag{
+  padding:6px 10px;
+  border:1px solid #00f7ff;
+  border-radius:20px;
+  color:#00f7ff;
+  font-size:12px;
+}
+
+.social-card{
+  text-decoration:none;
+  color:white;
+  text-align:center;
+}
+
+.social-card.instagram{
+  border-color:#ff00d4;
+}
+
+.social-card.email{
+  border-color:#8b5cf6;
+}
+
+.social-icon{
+  font-size:42px;
+  margin-bottom:12px;
+}
+
+.social-card h3{
+  color:#00f7ff;
+  margin-bottom:10px;
+}
+
+.social-card p{
+  color:#aaa;
+  word-break:break-word;
+  line-height:1.6;
+}
+
+footer{
+  text-align:center;
+  padding:30px 7%;
+  border-top:1px solid #222;
+  color:#999;
+}
+
+footer span{
+  color:#00f7ff;
+}
+
+@media(max-width:600px){
+  nav{
+    padding:14px 5%;
+  }
+
+  nav ul{
+    display:none;
+  }
+
+  .hero{
+    padding:90px 7% 50px;
+  }
+
+  section{
+    padding:60px 7%;
+  }
+
+  .about-highlights{
+    grid-template-columns:1fr 1fr;
+  }
+
+  .section-title{
+    font-size:28px;
+  }
+}
+</style></head><body><nav>
+  <div class="logo">REHAN.DEV</div>
+  <ul>
+    <li><a href="#about">About</a></li>
+    <li><a href="#skills">Skills</a></li>
+    <li><a href="#projects">Projects</a></li>
+    <li><a href="#contact">Contact</a></li>
+  </ul>
+</nav><section class="hero" id="home">
+  <div class="hero-content">
+    <h3>Hello, I'm</h3>
+    <h1>Rehan</h1><div class="typing" id="typing">
+  Future AI Engineer 🤖
+</div>
+
+<p>
+  A second-year student passionate about Artificial Intelligence,
+  programming and modern technology. I am building my skills step
+  by step with one big goal: becoming a skilled AI Engineer.
+</p>
+
+<div class="hero-buttons">
+  <a href="#projects" class="btn">Explore My Work 🚀</a>
+  <a href="#contact" class="btn btn-pink">Let's Connect ✨</a>
+</div>
+
+  </div>
+</section><section id="about">
+  <h2 class="section-title">ABOUT <span>ME</span></h2>  <div class="about-box">
+    <p>
+      I'm Rehan, a second-year student currently building my journey
+      toward becoming an AI Engineer. I am learning Java programming,
+      Object-Oriented Programming, Arrays and problem-solving concepts.
+      My future focus is Python, Artificial Intelligence and Machine Learning.
+      <br><br>
+      I enjoy building projects, learning new technologies, exploring
+      hackathons and understanding how AI can solve real-world problems.
+      I have also explored website deployment using GitHub Pages,
+      Netlify and Vercel.
+    </p><div class="about-highlights">
+  <div class="highlight">
+    <h3>🎓 2nd Year</h3>
+    <p>Student</p>
+  </div>
+
+  <div class="highlight">
+    <h3>🤖 AI</h3>
+    <p>Future Engineer</p>
+  </div>
+
+  <div class="highlight">
+    <h3>☕ Java</h3>
+    <p>Learning Programming</p>
+  </div>
+
+  <div class="highlight">
+    <h3>🚀 Goal</h3>
+    <p>Build & Innovate</p>
+  </div>
+</div>
+
+  </div>
+</section><section id="skills">
+  <h2 class="section-title">MY <span>SKILLS</span></h2>  <div class="skills-grid"><div class="skill-card">
+  <div class="skill-icon">☕</div>
+  <h3>Java</h3>
+  <p>Programming fundamentals and Object-Oriented Programming.</p>
+</div>
+
+<div class="skill-card">
+  <div class="skill-icon">🐍</div>
+  <h3>Python</h3>
+  <p>Starting my journey toward AI and Machine Learning.</p>
+</div>
+
+<div class="skill-card">
+  <div class="skill-icon">🧩</div>
+  <h3>DSA</h3>
+  <p>Learning problem-solving and Data Structures concepts.</p>
+</div>
+
+<div class="skill-card">
+  <div class="skill-icon">🌐</div>
+  <h3>Web Development</h3>
+  <p>Building websites and learning deployment.</p>
+</div>
+
+<div class="skill-card">
+  <div class="skill-icon">🧠</div>
+  <h3>AI & ML</h3>
+  <p>Exploring Artificial Intelligence and future technology.</p>
+</div>
+
+<div class="skill-card">
+  <div class="skill-icon">⚙️</div>
+  <h3>Git & Deployment</h3>
+  <p>GitHub Pages, Netlify and Vercel.</p>
+</div>
+
+  </div>
+</section><section id="journey">
+  <h2 class="section-title">MY <span>JOURNEY</span></h2>  <div class="timeline"><div class="timeline-item">
+  <h3>🚀 Programming Foundation</h3>
+  <p>Started building my programming foundation with Java and core programming concepts.</p>
+</div>
+
+<div class="timeline-item">
+  <h3>☕ Java & OOP</h3>
+  <p>Learning classes, objects, inheritance, constructors, arrays and Object-Oriented Programming.</p>
+</div>
+
+<div class="timeline-item">
+  <h3>🌐 Website Development</h3>
+  <p>Built websites and learned deployment through GitHub Pages, Netlify and Vercel.</p>
+</div>
+
+<div class="timeline-item">
+  <h3>🤖 AI Literacy Experience</h3>
+  <p>Introduced students to AI tools, smart study tools, cyber safety and future technology careers.</p>
+</div>
+
+<div class="timeline-item">
+  <h3>🧠 AI Engineer Journey</h3>
+  <p>Building a strong foundation for Python, Artificial Intelligence and Machine Learning.</p>
+</div>
+
+<div class="timeline-item">
+  <h3>🏆 Future Hackathons</h3>
+  <p>My goal is to participate in hackathons and build useful real-world technology projects.</p>
+</div>
+
+  </div>
+</section><section id="projects">
+  <h2 class="section-title">MY <span>PROJECTS</span></h2>  <div class="projects-grid"><div class="project-card">
+  <h3>🌐 Web Projects</h3>
+  <p>Built and upgraded websites while learning deployment using modern platforms.</p>
+  <div class="tags">
+    <span class="tag">HTML</span>
+    <span class="tag">CSS</span>
+    <span class="tag">JavaScript</span>
+  </div>
+</div>
+
+<div class="project-card">
+  <h3>🤖 AI Learning Journey</h3>
+  <p>Building my roadmap toward becoming an AI Engineer through programming, Python and AI concepts.</p>
+  <div class="tags">
+    <span class="tag">Python</span>
+    <span class="tag">AI</span>
+    <span class="tag">ML</span>
+  </div>
+</div>
+
+<div class="project-card">
+  <h3>🎓 AI Literacy Initiative</h3>
+  <p>Introduced students to AI tools such as ChatGPT and Gemini along with cyber safety awareness.</p>
+  <div class="tags">
+    <span class="tag">AI Literacy</span>
+    <span class="tag">Teaching</span>
+    <span class="tag">Cyber Safety</span>
+  </div>
+</div>
+
+  </div>
+</section><section id="contact">
+  <h2 class="section-title">LET'S <span>CONNECT</span></h2>  <div class="social-grid"><a href="https://www.linkedin.com/in/sayyed-rehan-75092838b" target="_blank" class="social-card">
+  <div class="social-icon">💼</div>
+  <h3>LinkedIn</h3>
+  <p>Connect with me professionally</p>
+</a>
+
+<a href="https://github.com/Sayedrehan9975-stack" target="_blank" class="social-card">
+  <div class="social-icon">💻</div>
+  <h3>GitHub</h3>
+  <p>Sayedrehan9975-stack</p>
+</a>
+
+<a href="https://www.instagram.com/Sdr_._007" target="_blank" class="social-card instagram">
+  <div class="social-icon">📸</div>
+  <h3>Instagram</h3>
+  <p>@Sdr_._007</p>
+</a>
+
+<a href="mailto:sdrehan1687@gmail.com" class="social-card email">
+  <div class="social-icon">📧</div>
+  <h3>Email</h3>
+  <p>sdrehan1687@gmail.com</p>
+</a>
+
+  </div>
+</section><footer>
+  © 2026 <span>Rehan</span> | Future AI Engineer 🤖
+  <br><br>
+  Learn • Build • Improve • Repeat 🚀
+</footer><script>
+const roles = [
+  "Future AI Engineer 🤖",
+  "Java Learner ☕",
+  "Python Explorer 🐍",
+  "Problem Solver 🧩",
+  "Future Innovator 🚀"
+];
+
+let roleIndex = 0;
+let charIndex = 0;
+let deleting = false;
+
+function typeEffect(){
+
+  const typing = document.getElementById("typing");
+  const currentRole = roles[roleIndex];
+
+  if(!deleting){
+    typing.textContent = currentRole.substring(0, charIndex++);
+  }else{
+    typing.textContent = currentRole.substring(0, charIndex--);
+  }
+
+  let speed = deleting ? 40 : 80;
+
+  if(!deleting && charIndex === currentRole.length + 1){
+    speed = 1200;
+    deleting = true;
+  }
+
+  if(deleting && charIndex === 0){
+    deleting = false;
+    roleIndex = (roleIndex + 1) % roles.length;
+  }
+
+  setTimeout(typeEffect, speed);
+}
+
+typeEffect();
+</script></body>
+</html>
